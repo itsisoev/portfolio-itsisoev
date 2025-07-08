@@ -1,0 +1,11 @@
+<div class="header-wrapper">
+  <div class="header-wrapper__links">
+    <ul>
+      @for (link of links(); track link) {
+        <li>
+          <a [routerLink]="link.href">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

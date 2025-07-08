@@ -1,0 +1,49 @@
+.header-wrapper {
+  position: fixed;
+  top: 0.9375rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__links {
+    width: 53.125rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+    background-color: var(--header-color);
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+
+      a {
+        font-size: 1rem;
+        font-family: "Libre Franklin", sans-serif;
+        color: white;
+        position: relative;
+        padding-bottom: 3px;
+        transition: all 0.3s ease;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: white;
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
