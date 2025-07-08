@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 interface ILink {
   label: string;
@@ -9,7 +9,8 @@ interface ILink {
 @Component({
   selector: 'uc-header',
   imports: [
-    RouterLink
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
@@ -34,4 +35,13 @@ export class Header {
       href: '/contact'
     }
   ])
+  isMenuOpen = signal<boolean>(false);
+
+  toggleMenu() {
+    this.isMenuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.isMenuOpen.set(false);
+  }
 }
